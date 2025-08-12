@@ -1,0 +1,234 @@
+<!-- =============================
+FILE: index.html (Single‑Page)
+============================= -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atinai — Agentes de IA en crema & vainilla</title>
+  <meta name="description" content="Atinai: directorio y showcase de agentes de inteligencia artificial. Diseño cálido en crema & vainilla, limpio, accesible y profesional." />
+  <meta property="og:title" content="Atinai — Tu punto de encuentro con agentes de IA" />
+  <meta property="og:description" content="Descubrí, compará y probá agentes de IA para ventas, soporte, marketing y operaciones." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            vanilla: { 50: '#FFFBF2', 100: '#FFF3D6', 200: '#FFE8AD', 300: '#FFD97A' },
+            crema: { 50: '#F8F5F0', 100: '#EFE7DC', 200: '#E4D8C7', 300: '#D6C3A9' }
+          },
+          boxShadow: { soft: '0 10px 30px rgba(0,0,0,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    /* offset para header sticky */
+    section[id] { scroll-margin-top: 96px; }
+  </style>
+</head>
+<body class="bg-vanilla-50 text-stone-800">
+  <!-- NAV: ahora con ANCLAS al home -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-vanilla-50/80 border-b border-crema-100">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 font-semibold" aria-label="Inicio Atinai">
+        <span class="inline-block w-8 h-8 rounded-xl2 bg-vanilla-200 shadow-soft"></span>
+        <span>Atinai</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Principal">
+        <a href="#agentes" class="hover:underline">Agentes</a>
+        <a href="#categorias" class="hover:underline">Categorías</a>
+        <a href="#implementacion" class="hover:underline">Usos e Implementación</a>
+        <a href="#contacto" class="hover:underline">Contacto</a>
+      </nav>
+      <a href="#contacto" class="text-sm bg-stone-900 text-vanilla-50 px-4 py-2 rounded-xl2 shadow-soft hover:opacity-90">Probar demo</a>
+    </div>
+  </header>
+
+  <!-- HERO / HOME -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-vanilla-100/80 to-transparent"></div>
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-semibold leading-tight">
+          Tu punto de encuentro con <span class="underline decoration-vanilla-300 decoration-8 underline-offset-4">agentes de IA</span>
+        </h1>
+        <p class="mt-4 text-stone-600 md:text-lg">Potenciá tu negocio con agentes de inteligencia artificial para ventas, soporte, marketing y operaciones. Simple, eficiente y hecho para crecer.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#agentes" class="px-5 py-3 rounded-xl2 bg-vanilla-200 hover:bg-vanilla-300 shadow-soft font-medium">Explorar agentes</a>
+          <a href="#contacto" class="px-5 py-3 rounded-xl2 bg-crema-100 hover:bg-crema-200 shadow-soft font-medium">Publicar mi agente</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="p-4 bg-crema-50 rounded-3xl shadow-soft border border-crema-100">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1400&auto=format&fit=crop" alt="Interfaz de agente de IA — Atinai" class="rounded-2xl w-full h-64 object-cover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTES -->
+  <section id="agentes" class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold">Agentes</h2>
+    <p class="text-stone-700 mt-2 md:text-lg">Los agentes de IA de <strong>Atinai</strong> son asistentes autónomos que entienden contexto, ejecutan tareas y mejoran con datos. Acá podés explorar ejemplos reales, filtrar por categoría (Ventas, Soporte, Marketing y Operaciones) y ver qué KPI impacta cada uno para elegir el que mejor se adapta a tu negocio, sin salir del home.</p>
+    <div id="grid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section id="categorias" class="max-w-6xl mx-auto px-4 py-16 border-t border-crema-100">
+    <h2 class="text-2xl md:text-3xl font-semibold">Categorías</h2>
+    <p class="text-stone-600 mt-2">Elegí el área donde tu agente de IA generará más valor.</p>
+
+    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <a class="p-6 rounded-3xl border border-crema-100 bg-white/70 hover:shadow-soft block" href="#agentes" data-cat="Ventas">
+        <h3 class="text-xl font-semibold">Ventas</h3>
+        <p class="text-stone-600 mt-1">Calificación, seguimiento y cierre. Ideal para aumentar conversión.</p>
+      </a>
+      <a class="p-6 rounded-3xl border border-crema-100 bg-white/70 hover:shadow-soft block" href="#agentes" data-cat="Soporte">
+        <h3 class="text-xl font-semibold">Soporte</h3>
+        <p class="text-stone-600 mt-1">Autoservicio 24/7 y reducción de tickets con alta satisfacción.</p>
+      </a>
+      <a class="p-6 rounded-3xl border border-crema-100 bg-white/70 hover:shadow-soft block" href="#agentes" data-cat="Marketing">
+        <h3 class="text-xl font-semibold">Marketing</h3>
+        <p class="text-stone-600 mt-1">Contenidos, segmentación y optimización de pauta.</p>
+      </a>
+      <a class="p-6 rounded-3xl border border-crema-100 bg-white/70 hover:shadow-soft block" href="#agentes" data-cat="Operaciones">
+        <h3 class="text-xl font-semibold">Operaciones</h3>
+        <p class="text-stone-600 mt-1">Orquestación de procesos internos y bots de backoffice.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- USOS E IMPLEMENTACIÓN -->
+  <section id="implementacion" class="max-w-6xl mx-auto px-4 py-16 border-t border-crema-100">
+    <h2 class="text-2xl md:text-3xl font-semibold">Usos e Implementación</h2>
+    <p class="text-stone-700 mt-2 md:text-lg">Implementar agentes de IA con <strong>Atinai</strong> genera mejoras medibles en poco tiempo. Estos son los principales beneficios y cómo llevarlos a producción.</p>
+
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <article class="rounded-3xl p-6 border border-crema-100 bg-white/70">
+        <h3 class="text-xl font-semibold">Beneficios (impacto en KPIs)</h3>
+        <ul class="list-disc list-inside text-stone-700 mt-2 space-y-2">
+          <li><strong>↓ Costos operativos:</strong> automatización de tareas repetitivas.</li>
+          <li><strong>↑ Conversión:</strong> respuesta inmediata y nurturing 24/7.</li>
+          <li><strong>↓ Tiempo de respuesta:</strong> SLAs más rápidos y CSAT alto.</li>
+          <li><strong>↑ Escalabilidad:</strong> atiende picos de demanda sin sumar headcount.</li>
+          <li><strong>Mejor decisión:</strong> datos en tiempo real y analítica de conversaciones.</li>
+        </ul>
+      </article>
+
+      <article class="rounded-3xl p-6 border border-crema-100 bg-white/70">
+        <h3 class="text-xl font-semibold">Cómo implementarlo (paso a paso)</h3>
+        <ol class="list-decimal list-inside text-stone-700 mt-2 space-y-2">
+          <li><strong>Diagnóstico:</strong> casos de uso y KPIs objetivo.</li>
+          <li><strong>MVP:</strong> 1–2 flujos críticos con éxito definido.</li>
+          <li><strong>Integración:</strong> CRM/helpdesk, webhooks y analíticas.</li>
+          <li><strong>Gobernanza:</strong> permisos, logs, guardrails y privacidad.</li>
+          <li><strong>Escala:</strong> nuevos flujos, multicanal y QA continuo.</li>
+        </ol>
+      </article>
+    </div>
+
+    <div class="mt-10 rounded-3xl p-6 border border-vanilla-200 bg-vanilla-50">
+      <h3 class="text-xl font-semibold">Preguntas frecuentes</h3>
+      <details class="mt-3 p-4 border border-crema-100 rounded-2xl bg-white/70"><summary class="font-medium">¿Qué resultados puedo esperar el primer mes?</summary><p class="mt-2 text-stone-700">Reducciones del 20–40% en tiempos de respuesta y automatización del 30–60% de tickets repetitivos, según el caso.</p></details>
+      <details class="mt-3 p-4 border border-crema-100 rounded-2xl bg-white/70"><summary class="font-medium">¿Cómo controlo riesgos?</summary><p class="mt-2 text-stone-700">Definí políticas de datos, revisiones humanas (HITL) para casos sensibles y métricas de calidad por flujo.</p></details>
+      <details class="mt-3 p-4 border border-crema-100 rounded-2xl bg-white/70"><summary class="font-medium">¿Cuánto tarda el despliegue?</summary><p class="mt-2 text-stone-700">Un MVP suele estar listo en 1–2 semanas si los sistemas de destino están integrados.</p></details>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="max-w-6xl mx-auto px-4 py-16 border-t border-crema-100">
+    <h2 class="text-2xl md:text-3xl font-semibold">Contacto</h2>
+    <p class="text-stone-600 mt-2">Escribinos y coordinamos una demo. Si querés listar tu agente, contanos el caso de uso y enlaces.</p>
+
+    <div class="grid md:grid-cols-2 gap-8 mt-6">
+      <div class="rounded-3xl p-8 border border-crema-100 bg-white/70 shadow-soft">
+        <form onsubmit="event.preventDefault(); alert('¡Gracias! Atinai te contacta pronto.'); this.reset();">
+          <label class="block text-sm mb-1">Nombre</label>
+          <input required class="w-full border border-crema-200 rounded-xl2 px-4 py-2 bg-white/80" placeholder="Tu nombre" />
+          <label class="block text-sm mt-4 mb-1">Email</label>
+          <input type="email" required class="w-full border border-crema-200 rounded-xl2 px-4 py-2 bg-white/80" placeholder="tu@email.com" />
+          <label class="block text-sm mt-4 mb-1">Tema</label>
+          <select class="w-full border border-crema-200 rounded-xl2 px-4 py-2 bg-white/80">
+            <option>Quiero una demo</option><option>Quiero listar mi agente</option><option>Alianzas</option><option>Soporte</option>
+          </select>
+          <label class="block text-sm mt-4 mb-1">Mensaje</label>
+          <textarea rows="5" class="w-full border border-crema-200 rounded-xl2 px-4 py-2 bg-white/80" placeholder="Contanos qué necesitás…"></textarea>
+          <button class="mt-4 px-5 py-3 rounded-xl2 bg-stone-900 text-vanilla-50 hover:opacity-90">Enviar</button>
+        </form>
+      </div>
+
+      <div class="rounded-3xl p-8 border border-vanilla-200 bg-vanilla-50 shadow-soft">
+        <h3 class="text-xl font-semibold">Información</h3>
+        <ul class="mt-2 text-stone-700 space-y-2">
+          <li><strong>Email:</strong> hola@atinai.io (placeholder)</li>
+          <li><strong>Horario:</strong> Lun–Vie 9:00–18:00 (GMT‑3)</li>
+          <li><strong>Respuesta:</strong> 24–48 h hábiles</li>
+        </ul>
+        <h4 class="text-lg font-semibold mt-6">Por qué crema & vainilla</h4>
+        <p class="mt-2 text-stone-700">Estética cálida que inspira confianza y reduce fricción. Accesible, mobile‑first y con foco en performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-crema-100 bg-crema-50/60">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-stone-600 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p>© <span id="year"></span> Atinai. Todos los derechos reservados.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:underline">Términos</a>
+        <a href="#" class="hover:underline">Privacidad</a>
+        <a href="#" class="hover:underline" aria-label="GitHub de Atinai">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Año footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Datos de ejemplo para el grid de agentes
+    const DATA = [
+      { nombre:'Vendedora Pro', categoria:'Ventas', kpi:'conversion', desc:'Califica leads y asiste cierres.', demo:'#', docs:'#', img:'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1400&auto=format&fit=crop' },
+      { nombre:'Soporte 24/7', categoria:'Soporte', kpi:'costo', desc:'Reduce tickets de L1 con FAQs.', demo:'#', docs:'#', img:'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1400&auto=format&fit=crop' },
+      { nombre:'Growth Wizard', categoria:'Marketing', kpi:'conversion', desc:'Crea campañas y audiencias.', demo:'#', docs:'#', img:'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1400&auto=format&fit=crop' },
+      { nombre:'OpsFlow', categoria:'Operaciones', kpi:'tiempo', desc:'Orquesta procesos internos.', demo:'#', docs:'#', img:'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1400&auto=format&fit=crop' }
+    ];
+
+    const grid = document.getElementById('grid');
+
+function card(a){
+  return `<article class="group border border-crema-100 bg-white/70 rounded-3xl p-4 shadow-soft transition">
+    <img src="${a.img}" alt="${a.nombre}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop';" class="w-full h-40 sm:h-44 lg:h-48 object-cover rounded-2xl border border-crema-100 bg-crema-50"/>
+    <div class="mt-4">
+      <div class="flex items-center justify-between"><h3 class="font-semibold text-lg">${a.nombre}</h3><span class="text-xs px-2 py-1 rounded-full bg-vanilla-200">${a.categoria}</span></div>
+      <p class="mt-1 text-sm text-stone-600">${a.desc}</p>
+      <div class="mt-4 flex gap-2"><a class="px-3 py-2 text-sm rounded-xl2 bg-stone-900 text-vanilla-50" href="${a.demo}">Probar</a><a class="px-3 py-2 text-sm rounded-xl2 bg-crema-100" href="${a.docs}">Docs</a></div>
+    </div>
+  </article>`;
+}
+
+let currentCat = null;
+function apply(){
+  const items = DATA.filter(a => !currentCat || a.categoria===currentCat);
+  grid.innerHTML = items.map(card).join('');
+}
+apply();
+
+document.querySelectorAll('[data-cat]').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    currentCat = el.getAttribute('data-cat');
+    apply();
+  });
+});
+  </script>
+</body>
+</html>
