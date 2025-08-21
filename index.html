@@ -1,6 +1,3 @@
-<!-- =============================
-FILE: index.html (Single-Page)
-============================= -->
 <!doctype html>
 <html lang="es">
 <head>
@@ -30,14 +27,74 @@ FILE: index.html (Single-Page)
       }
     }
   </script>
+
   <style>
     html { scroll-behavior: smooth; }
     /* offset para header sticky */
     section[id] { scroll-margin-top: 96px; }
+
+    /* ======== n8n Chat: theming fino crema & vainilla ======== */
+    :root {
+      /* Tipografía */
+      --chat--font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+      /* Paleta base */
+      --chat--color-primary: #1f2937;                /* acento principal, header, toggles */
+      --chat--color-primary-shade-50: #111827;
+      --chat--color-primary-shade-100: #0b1220;
+
+      --chat--color-secondary: #FFD97A;              /* acentos complementarios */
+      --chat--color-secondary-shade-50: #F2C966;
+
+      --chat--color-white: #ffffff;
+      --chat--color-light: #FFFBF2;                  /* fondo general */
+      --chat--color-light-shade-50: #FFF3D6;         /* panels / bubbles bot */
+      --chat--color-light-shade-100: #FFE8AD;
+      --chat--color-medium: #E4D8C7;                 /* bordes suaves */
+      --chat--color-dark: #1f2937;                   /* texto principal */
+      --chat--color-disabled: #9CA3AF;
+
+      /* Ventana */
+      --chat--window--width: 420px;
+      --chat--window--height: 620px;
+      --chat--border-radius: 20px;
+
+      /* Toggle flotante */
+      --chat--toggle--size: 56px;
+      --chat--toggle--background: var(--chat--color-primary);
+      --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
+      --chat--toggle--active--background: var(--chat--color-primary-shade-100);
+      --chat--toggle--color: #ffffff;
+
+      /* Header */
+      --chat--header--background: var(--chat--color-secondary);
+      --chat--header--color: #1C1917;
+
+      /* Mensajes */
+      --chat--message--user--background: var(--chat--color-primary);
+      --chat--message--user--color: #FFFBF2;
+      --chat--message--bot--background: var(--chat--color-light-shade-50);
+      --chat--message--bot--color: var(--chat--color-dark);
+
+      /* Input */
+      --chat--input--background: #FFFDF8;
+      --chat--input--color: var(--chat--color-dark);
+      --chat--input--placeholder--color: #9CA3AF;
+
+      /* Botón enviar */
+      --chat--button--background: var(--chat--color-secondary);
+      --chat--button--color: #1C1917;
+
+      /* Loader */
+      --chat--loader--color: var(--chat--color-secondary);
+    }
   </style>
+
+  <!-- ===== n8n Chat widget CSS (CDN) ===== -->
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
 </head>
 <body class="bg-vanilla-50 text-stone-800">
-  <!-- NAV: ahora con ANCLAS al home -->
+  <!-- NAV -->
   <header class="sticky top-0 z-40 backdrop-blur bg-vanilla-50/80 border-b border-crema-100">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-2 font-semibold" aria-label="Inicio Atinai">
@@ -50,7 +107,7 @@ FILE: index.html (Single-Page)
         <a href="#implementacion" class="hover:underline">Usos e Implementación</a>
         <a href="#contacto" class="hover:underline">Contacto</a>
       </nav>
-      <!-- BOTÓN HEADER MODIFICADO PARA ABRIR EL CHAT -->
+      <!-- Probar demo abre el chat (widget oficial) -->
       <a href="#chat" data-open-chat
          class="text-sm bg-stone-900 text-vanilla-50 px-4 py-2 rounded-xl2 shadow-soft hover:opacity-90">
         Probar demo
@@ -83,77 +140,14 @@ FILE: index.html (Single-Page)
   <!-- AGENTES -->
   <section id="agentes" class="max-w-6xl mx-auto px-4 py-16">
     <h2 class="text-2xl md:text-3xl font-semibold">Agentes</h2>
-    <p class="text-stone-700 mt-2 md:text-lg">Los agentes de IA de <strong>Atinai</strong> son asistentes autónomos que entienden contexto, ejecutan tareas y mejoran con datos. Acá podés explorar ejemplos reales, filtrar por categoría (Ventas, Soporte, Marketing y Operaciones) y ver qué KPI impacta cada uno para elegir el que mejor se adapta a tu negocio, sin salir del home.</p>
+    <p class="text-stone-700 mt-2 md:text-lg">Los agentes de IA de <strong>Atinai</strong> son asistentes autónomos que entienden contexto, ejecutan tareas y mejoran con datos.</p>
     <div id="grid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-  </section>
-
-  <!-- CATEGORÍAS -->
-  <section id="categorias" class="max-w-6xl mx-auto px-4 py-16 border-t border-crema-100">
-    <h2 class="text-2xl md:text-3xl font-semibold">Categorías</h2>
-    <p class="text-stone-600 mt-2">Elegí el área donde tu agente de IA generará más valor.</p>
-
-    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <a class="p-6 rounded-3xl border border-crema-100 bg-white/70 hover:shadow-soft block" href="#agentes" data-cat="Ventas">
-        <h3 class="text-xl font-semibold">Ventas</h3>
-        <p class="text-stone-600 mt-1">Calificación, seguimiento y cierre. Ideal para aumentar conversión.</p>
-      </a>
-      <a class="p-6 rounded-3xl border border-crema-100 bg-white/70 hover:shadow-soft block" href="#agentes" data-cat="Soporte">
-        <h3 class="text-xl font-semibold">Soporte</h3>
-        <p class="text-stone-600 mt-1">Autoservicio 24/7 y reducción de tickets con alta satisfacción.</p>
-      </a>
-      <a class="p-6 rounded-3xl border border-crema-100 bg-white/70 hover:shadow-soft block" href="#agentes" data-cat="Marketing">
-        <h3 class="text-xl font-semibold">Marketing</h3>
-        <p class="text-stone-600 mt-1">Contenidos, segmentación y optimización de pauta.</p>
-      </a>
-      <a class="p-6 rounded-3xl border border-crema-100 bg-white/70 hover:shadow-soft block" href="#agentes" data-cat="Operaciones">
-        <h3 class="text-xl font-semibold">Operaciones</h3>
-        <p class="text-stone-600 mt-1">Orquestación de procesos internos y bots de backoffice.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- USOS E IMPLEMENTACIÓN -->
-  <section id="implementacion" class="max-w-6xl mx-auto px-4 py-16 border-t border-crema-100">
-    <h2 class="text-2xl md:text-3xl font-semibold">Usos e Implementación</h2>
-    <p class="text-stone-700 mt-2 md:text-lg">Implementar agentes de IA con <strong>Atinai</strong> genera mejoras medibles en poco tiempo. Estos son los principales beneficios y cómo llevarlos a producción.</p>
-
-    <div class="mt-8 grid md:grid-cols-2 gap-6">
-      <article class="rounded-3xl p-6 border border-crema-100 bg-white/70">
-        <h3 class="text-xl font-semibold">Beneficios (impacto en KPIs)</h3>
-        <ul class="list-disc list-inside text-stone-700 mt-2 space-y-2">
-          <li><strong>↓ Costos operativos:</strong> automatización de tareas repetitivas.</li>
-          <li><strong>↑ Conversión:</strong> respuesta inmediata y nurturing 24/7.</li>
-          <li><strong>↓ Tiempo de respuesta:</strong> SLAs más rápidos y CSAT alto.</li>
-          <li><strong>↑ Escalabilidad:</strong> atiende picos de demanda sin sumar headcount.</li>
-          <li><strong>Mejor decisión:</strong> datos en tiempo real y analítica de conversaciones.</li>
-        </ul>
-      </article>
-
-      <article class="rounded-3xl p-6 border border-crema-100 bg-white/70">
-        <h3 class="text-xl font-semibold">Cómo implementarlo (paso a paso)</h3>
-        <ol class="list-decimal list-inside text-stone-700 mt-2 space-y-2">
-          <li><strong>Diagnóstico:</strong> casos de uso y KPIs objetivo.</li>
-          <li><strong>MVP:</strong> 1–2 flujos críticos con éxito definido.</li>
-          <li><strong>Integración:</strong> CRM/helpdesk, webhooks y analíticas.</li>
-          <li><strong>Gobernanza:</strong> permisos, logs, guardrails y privacidad.</li>
-          <li><strong>Escala:</strong> nuevos flujos, multicanal y QA continuo.</li>
-        </ol>
-      </article>
-    </div>
-
-    <div class="mt-10 rounded-3xl p-6 border border-vanilla-200 bg-vanilla-50">
-      <h3 class="text-xl font-semibold">Preguntas frecuentes</h3>
-      <details class="mt-3 p-4 border border-crema-100 rounded-2xl bg-white/70"><summary class="font-medium">¿Qué resultados puedo esperar el primer mes?</summary><p class="mt-2 text-stone-700">Reducciones del 20–40% en tiempos de respuesta y automatización del 30–60% de tickets repetitivos, según el caso.</p></details>
-      <details class="mt-3 p-4 border border-crema-100 rounded-2xl bg-white/70"><summary class="font-medium">¿Cómo controlo riesgos?</summary><p class="mt-2 text-stone-700">Definí políticas de datos, revisiones humanas (HITL) para casos sensibles y métricas de calidad por flujo.</p></details>
-      <details class="mt-3 p-4 border border-crema-100 rounded-2xl bg-white/70"><summary class="font-medium">¿Cuánto tarda el despliegue?</summary><p class="mt-2 text-stone-700">Un MVP suele estar listo en 1–2 semanas si los sistemas de destino están integrados.</p></details>
-    </div>
   </section>
 
   <!-- CONTACTO -->
   <section id="contacto" class="max-w-6xl mx-auto px-4 py-16 border-t border-crema-100">
     <h2 class="text-2xl md:text-3xl font-semibold">Contacto</h2>
-    <p class="text-stone-600 mt-2">Escribinos y coordinamos una demo. Si querés listar tu agente, contanos el caso de uso y enlaces.</p>
-
+    <p class="text-stone-600 mt-2">Escribinos y coordinamos una demo.</p>
     <div class="grid md:grid-cols-2 gap-8 mt-6">
       <div class="rounded-3xl p-8 border border-crema-100 bg-white/70 shadow-soft">
         <form onsubmit="event.preventDefault(); alert('¡Gracias! Atinai te contacta pronto.'); this.reset();">
@@ -161,21 +155,17 @@ FILE: index.html (Single-Page)
           <input required class="w-full border border-crema-200 rounded-xl2 px-4 py-2 bg-white/80" placeholder="Tu nombre" />
           <label class="block text-sm mt-4 mb-1">Email</label>
           <input type="email" required class="w-full border border-crema-200 rounded-xl2 px-4 py-2 bg-white/80" placeholder="tu@email.com" />
-          <label class="block text-sm mt-4 mb-1">Tema</label>
-          <select class="w-full border border-crema-200 rounded-xl2 px-4 py-2 bg-white/80">
-            <option>Quiero una demo</option><option>Quiero listar mi agente</option><option>Alianzas</option><option>Soporte</option>
-          </select>
           <label class="block text-sm mt-4 mb-1">Mensaje</label>
           <textarea rows="5" class="w-full border border-crema-200 rounded-xl2 px-4 py-2 bg-white/80" placeholder="Contanos qué necesitás…"></textarea>
           <button class="mt-4 px-5 py-3 rounded-xl2 bg-stone-900 text-vanilla-50 hover:opacity-90">Enviar</button>
         </form>
       </div>
-
       <div class="rounded-3xl p-8 border border-vanilla-200 bg-vanilla-50 shadow-soft">
         <h3 class="text-xl font-semibold">Información</h3>
         <ul class="mt-2 text-stone-700 space-y-2">
-          <li><strong>Email:</strong> info@atinai.com
-          <li><strong>Horario:</strong> 24 Hs
+          <li><strong>Email:</strong> info@atinai.com</li>
+          <li><strong>Horario:</strong> 24 Hs</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -191,135 +181,85 @@ FILE: index.html (Single-Page)
     </div>
   </footer>
 
-  <!-- === Chat n8n: botón flotante + modal === -->
-  <button id="n8n-chat-toggle"
-    class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 px-4 py-3 rounded-full bg-stone-900 text-vanilla-50 shadow-soft hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-stone-700"
-    aria-label="Abrir chat" aria-haspopup="dialog" aria-controls="n8n-chat-modal">
-    <!-- ícono burbuja -->
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M4 17v3.5a.5.5 0 0 0 .8.4L9 18h7a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v9z"
-            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span class="text-sm font-medium hidden sm:inline">Chat</span>
-  </button>
+  <!-- ===== Contenedor del widget (requerido) ===== -->
+  <div id="n8n-chat"></div>
 
-  <div id="n8n-chat-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="n8n-chat-title">
-    <!-- overlay -->
-    <div id="n8n-chat-overlay" class="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+  <!-- ===== n8n Chat widget JS (CDN, ESM) ===== -->
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
-    <!-- panel -->
-    <div class="absolute bottom-0 right-0 w-full sm:w-[420px] h-[80vh] sm:h-[70vh] p-3 sm:p-4">
-      <div class="relative h-full rounded-3xl border border-crema-100 bg-white shadow-soft flex flex-col">
-        <header class="flex items-center justify-between px-4 py-3 border-b border-crema-100">
-          <h2 id="n8n-chat-title" class="text-sm font-semibold">Atinai — Demo de chat</h2>
-          <button id="n8n-chat-close" class="p-2 rounded-xl2 hover:bg-crema-50 focus:outline-none focus:ring-2 focus:ring-stone-700" aria-label="Cerrar chat">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </button>
-        </header>
+    // Inicialización del widget oficial
+    const chat = createChat({
+      webhookUrl: 'https://smartialab.app.n8n.cloud/webhook/5326e2ba-0e9a-4f0f-b3b2-1347140ce359/chat',
+      target: '#n8n-chat',
+      mode: 'window',                 // 'window' (burbuja + ventanita) o 'fullscreen'
+      loadPreviousSession: true,      // restaurar chat previo (si tu flujo usa memoria)
+      enableStreaming: true,          // streaming (activá "Streaming" en el Chat Trigger)
+      showWelcomeScreen: false,
+      initialMessages: [
+        '👋 ¡Hola! Soy el agente de Atinai.',
+        'Contame qué necesitás y te ayudo al toque.'
+      ],
+      i18n: {
+        en: {
+          title: 'Atinai — Agente de IA',
+          subtitle: '¿En qué te ayudo hoy?',
+          getStarted: 'Nueva conversación',
+          inputPlaceholder: 'Escribí tu mensaje…'
+        }
+      },
+      metadata: {
+        source: 'atinai-site',
+        cmp: new URLSearchParams(location.search).get('cmp') || undefined
+      }
+    });
 
-        <!-- loader simple -->
-        <div id="n8n-chat-loader" class="absolute inset-0 grid place-items-center">
-          <div class="animate-pulse rounded-2xl w-16 h-16 bg-vanilla-200 border border-vanilla-300"></div>
-        </div>
+    // Abrir desde el botón del header
+    document.querySelectorAll('[data-open-chat]').forEach(el=>{
+      el.addEventListener('click', (e)=>{
+        e.preventDefault();
+        // El widget monta un botón toggle interno en #n8n-chat
+        const toggle = document.querySelector('#n8n-chat button');
+        if (toggle) toggle.click();
+      });
+    });
 
-        <!-- iframe del chat -->
-        <iframe
-          id="n8n-chat-frame"
-          title="Chat n8n"
-          class="flex-1 w-full rounded-b-3xl"
-          referrerpolicy="no-referrer"
-          loading="lazy"
-          src=""
-          data-src="https://smartialab.app.n8n.cloud/webhook/5326e2ba-0e9a-4f0f-b3b2-1347140ce359/chat"
-          style="border:0; height:100%;"></iframe>
-      </div>
-    </div>
-  </div>
-  <!-- === /Chat n8n === -->
+    // Abrir automático ?openChat=1 (útil para campañas)
+    if (new URLSearchParams(location.search).get('openChat') === '1') {
+      const tryOpen = () => {
+        const toggle = document.querySelector('#n8n-chat button');
+        if (toggle) toggle.click(); else requestAnimationFrame(tryOpen);
+      };
+      tryOpen();
+    }
+  </script>
 
+  <!-- Script extra de la página (demo de cards y año) -->
   <script>
     // Año footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Datos de ejemplo para el grid de agentes
+    // Grid demo
     const DATA = [
-      { nombre:'Vendedora Pro', categoria:'Ventas', kpi:'conversion', desc:'Califica leads y asiste cierres.', demo:'#', docs:'#', img:'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1400&auto=format&fit=crop' },
-      { nombre:'Soporte 24/7', categoria:'Soporte', kpi:'costo', desc:'Reduce tickets de L1 con FAQs.', demo:'#', docs:'#', img:'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1400&auto=format&fit=crop' },
-      { nombre:'Growth Wizard', categoria:'Marketing', kpi:'conversion', desc:'Crea campañas y audiencias.', demo:'#', docs:'#', img:'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1400&auto=format&fit=crop' },
-      { nombre:'OpsFlow', categoria:'Operaciones', kpi:'tiempo', desc:'Orquesta procesos internos.', demo:'#', docs:'#', img:'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1400&auto=format&fit=crop' }
+      { nombre:'Vendedora Pro', categoria:'Ventas', desc:'Califica leads y asiste cierres.', img:'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1400&auto=format&fit=crop' },
+      { nombre:'Soporte 24/7', categoria:'Soporte', desc:'Reduce tickets de L1 con FAQs.', img:'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1400&auto=format&fit=crop' },
+      { nombre:'Growth Wizard', categoria:'Marketing', desc:'Crea campañas y audiencias.', img:'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1400&auto=format&fit=crop' },
+      { nombre:'OpsFlow', categoria:'Operaciones', desc:'Orquesta procesos internos.', img:'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1400&auto=format&fit=crop' }
     ];
-
     const grid = document.getElementById('grid');
-
-    function card(a){
-      return `<article class="group border border-crema-100 bg-white/70 rounded-3xl p-4 shadow-soft transition">
-        <img src="${a.img}" alt="${a.nombre}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop';" class="w-full h-40 sm:h-44 lg:h-48 object-cover rounded-2xl border border-crema-100 bg-crema-50"/>
+    if (grid) grid.innerHTML = DATA.map(a => `
+      <article class="group border border-crema-100 bg-white/70 rounded-3xl p-4 shadow-soft transition">
+        <img src="${a.img}" alt="${a.nombre}" loading="lazy"
+             class="w-full h-40 sm:h-44 lg:h-48 object-cover rounded-2xl border border-crema-100 bg-crema-50"/>
         <div class="mt-4">
-          <div class="flex items-center justify-between"><h3 class="font-semibold text-lg">${a.nombre}</h3><span class="text-xs px-2 py-1 rounded-full bg-vanilla-200">${a.categoria}</span></div>
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold text-lg">${a.nombre}</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-vanilla-200">${a.categoria}</span>
+          </div>
           <p class="mt-1 text-sm text-stone-600">${a.desc}</p>
-          <div class="mt-4 flex gap-2"><a class="px-3 py-2 text-sm rounded-xl2 bg-stone-900 text-vanilla-50" href="${a.demo}">Probar</a><a class="px-3 py-2 text-sm rounded-xl2 bg-crema-100" href="${a.docs}">Docs</a></div>
         </div>
-      </article>`;
-    }
-
-    let currentCat = null;
-    function apply(){
-      const items = DATA.filter(a => !currentCat || a.categoria===currentCat);
-      grid.innerHTML = items.map(card).join('');
-    }
-    apply();
-
-    document.querySelectorAll('[data-cat]').forEach(el=>{
-      el.addEventListener('click', ()=>{
-        currentCat = el.getAttribute('data-cat');
-        apply();
-      });
-    });
-
-    // === Script del chat (botón flotante + header) ===
-    (function(){
-      const openBtn   = document.getElementById('n8n-chat-toggle');
-      const modal     = document.getElementById('n8n-chat-modal');
-      const overlay   = document.getElementById('n8n-chat-overlay');
-      const closeBtn  = document.getElementById('n8n-chat-close');
-      const iframe    = document.getElementById('n8n-chat-frame');
-      const loader    = document.getElementById('n8n-chat-loader');
-
-      function openModal(){
-        if (!iframe.src) {
-          iframe.src = iframe.dataset.src;
-          iframe.addEventListener('load', () => loader.classList.add('hidden'), { once: true });
-        }
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-        openBtn.setAttribute('aria-expanded', 'true');
-      }
-
-      function closeModal(){
-        modal.classList.add('hidden');
-        document.body.style.overflow = '';
-        openBtn.setAttribute('aria-expanded', 'false');
-      }
-
-      // Botón flotante
-      openBtn.addEventListener('click', openModal);
-      // Cerrar
-      closeBtn.addEventListener('click', closeModal);
-      overlay.addEventListener('click', closeModal);
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-      });
-
-      // Cualquier elemento con data-open-chat abre el modal (ej. botón header)
-      document.querySelectorAll('[data-open-chat]').forEach(el=>{
-        el.addEventListener('click', (e)=>{
-          e.preventDefault();
-          openModal();
-        });
-      });
-    })();
+      </article>
+    `).join('');
   </script>
 </body>
 </html>
