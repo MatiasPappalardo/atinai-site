@@ -274,20 +274,62 @@
       }
     });
 
-    // Abrir desde cualquier [data-open-chat] (header y cards)
+    // Abrir desde cualquier [data-open-chat] (header y cards) con apertura robusta del widget
+    function openChatWindow() {
+      const selectors = [
+        '#n8n-chat button',
+        '#n8n-chat [role="button"]',
+        '#n8n-chat [class*="toggle"]',
+        '#n8n-chat [data-testid*="toggle"]'
+      ];
+      const clickEl = () => {
+        for (const sel of selectors) {
+          const el = document.querySelector(sel);
+          if (el) {
+            try {
+              el.dispatchEvent(new MouseEvent('pointerdown', { bubbles: true }));
+              el.click();
+              el.dispatchEvent(new MouseEvent('pointerup', { bubbles: true }));
+              return true;
+            } catch (_) {
+              try { el.click(); return true; } catch (_) { /* ignore */ }
+            }
+          }
+        }
+        return false;
+      };
+      // intenta por hasta 2s por si el botón aún no montó
+      const start = performance.now();
+      const loop = () => {
+        if (clickEl()) return;
+        if (performance.now() - start < 2000) requestAnimationFrame(loop);
+      };
+      loop();
+    }
+
     document.addEventListener('click', (e) => {
       const trigger = e.target.closest('[data-open-chat]');
       if (!trigger) return;
       e.preventDefault();
-      if (chat && typeof chat.open === 'function') {
-        chat.open(); // 👈 abre directamente la ventana de chat
-      } else {
-        const toggle = document.querySelector('#n8n-chat button');
-        if (toggle) toggle.click();
+      // Si el bundle expone métodos en el objeto devuelto, usalos
+      if (typeof chat?.open === 'function') {
+        try { chat.open(); return; } catch (_) { /* fallback abajo */ }
       }
+      // Fallback: simular click sobre el toggle del widget
+      openChatWindow();
     });
 
     // Deep link para campañas: ?openChat=1
+    if (new URLSearchParams(location.search).get('openChat') === '1') {
+      const tryOpen = () => {
+        if (typeof chat?.open === 'function') {
+          try { chat.open(); return; } catch (_) {}
+        }
+        openChatWindow();
+      };
+      // pequeño delay para asegurar montaje
+      requestAnimationFrame(tryOpen);
+    }
     if (new URLSearchParams(location.search).get('openChat') === '1') {
       const tryOpen = () => {
         if (chat && typeof chat.open === 'function') {
