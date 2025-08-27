@@ -274,20 +274,28 @@
       }
     });
 
-    // Abrir desde cualquier [data-open-chat] (ej: botón header)
-    document.querySelectorAll('[data-open-chat]').forEach(el=>{
-      el.addEventListener('click', (e)=>{
-        e.preventDefault();
+    // Abrir desde cualquier [data-open-chat] (header y cards)
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-open-chat]');
+      if (!trigger) return;
+      e.preventDefault();
+      if (chat && typeof chat.open === 'function') {
+        chat.open(); // 👈 abre directamente la ventana de chat
+      } else {
         const toggle = document.querySelector('#n8n-chat button');
         if (toggle) toggle.click();
-      });
+      }
     });
 
     // Deep link para campañas: ?openChat=1
     if (new URLSearchParams(location.search).get('openChat') === '1') {
       const tryOpen = () => {
-        const toggle = document.querySelector('#n8n-chat button');
-        if (toggle) toggle.click(); else requestAnimationFrame(tryOpen);
+        if (chat && typeof chat.open === 'function') {
+          chat.open();
+        } else {
+          const toggle = document.querySelector('#n8n-chat button');
+          if (toggle) toggle.click(); else requestAnimationFrame(tryOpen);
+        }
       };
       tryOpen();
     }
@@ -314,7 +322,7 @@
         <div class="mt-4">
           <div class="flex items-center justify-between"><h3 class="font-semibold text-lg">${a.nombre}</h3><span class="text-xs px-2 py-1 rounded-full bg-vanilla-200">${a.categoria}</span></div>
           <p class="mt-1 text-sm text-stone-600">${a.desc}</p>
-          <div class="mt-4 flex gap-2"><a class="px-3 py-2 text-sm rounded-xl2 bg-stone-900 text-vanilla-50" href="${a.demo}">Probar</a><a class="px-3 py-2 text-sm rounded-xl2 bg-crema-100" href="${a.docs}">Docs</a></div>
+          <div class="mt-4 flex gap-2"><a class="px-3 py-2 text-sm rounded-xl2 bg-stone-900 text-vanilla-50" href="${a.demo}" data-open-chat>Probar</a><a class="px-3 py-2 text-sm rounded-xl2 bg-crema-100" href="${a.docs}">Docs</a></div>
         </div>
       </article>`;
     }
