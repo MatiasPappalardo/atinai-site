@@ -1780,6 +1780,109 @@ body div.bg-ink {
   border-color: var(--border) !important;
 }
 
+.site-footer {
+  margin-top: 0;
+}
+
+.site-footer-inner {
+  padding-top: 44px;
+  padding-bottom: 22px;
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) repeat(3, minmax(0, 0.85fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.site-footer-column {
+  min-width: 0;
+}
+
+.site-footer-title {
+  display: inline-block;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.site-footer-description,
+.site-footer-brandline {
+  margin: 0;
+  max-width: 29ch;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.site-footer-description {
+  margin-top: 14px;
+}
+
+.site-footer-brandline {
+  margin-top: 14px;
+}
+
+.site-footer-brandline a {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-footer-brandline a:hover {
+  color: var(--accent-strong);
+  border-color: currentColor;
+}
+
+.site-footer-heading {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.site-footer-links {
+  display: grid;
+  gap: 12px;
+}
+
+.site-footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.site-footer-links a:hover {
+  color: var(--text);
+  transform: translateX(2px);
+}
+
+.site-footer-bottom {
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.site-footer-bottom p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
 body .hover\:bg-vanilla-300:hover,
 body .hover\:bg-white:hover,
 body .hover\:bg-white\/10:hover {
@@ -2060,6 +2163,11 @@ body textarea:focus {
     max-width: 520px !important;
     padding: 0 0 1.5rem !important;
   }
+
+  .site-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 24px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2084,5 +2192,27 @@ body textarea:focus {
   .hero-panel-dashboard,
   .hero-panel-chat {
     max-width: 100% !important;
+  }
+
+  .site-footer-inner {
+    padding-top: 36px;
+    padding-bottom: 18px;
+  }
+
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .site-footer-description,
+  .site-footer-brandline {
+    max-width: none;
+  }
+
+  .site-footer-bottom {
+    margin-top: 28px;
+    padding-top: 16px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
