@@ -1115,6 +1115,131 @@ body > * {
   position: relative;
 }
 
+.clients-carousel-section {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.clients-carousel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.clients-carousel-title {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.clients-carousel-link {
+  color: var(--accent-strong);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.clients-carousel-link:hover {
+  color: var(--accent);
+}
+
+.clients-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.clients-carousel-wrapper::before,
+.clients-carousel-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.clients-carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-soft) 0%, transparent 100%);
+}
+
+.clients-carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg-soft) 0%, transparent 100%);
+}
+
+.clients-carousel-track {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  width: max-content;
+  animation: carouselScroll 30s linear infinite;
+  will-change: transform;
+}
+
+.clients-carousel-wrapper:hover .clients-carousel-track {
+  animation-play-state: paused;
+}
+
+.client-card {
+  min-width: 220px;
+  padding: 20px 18px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel-strong);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: 0 16px 34px var(--accent-glow);
+}
+
+.client-card-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--accent-strong);
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.client-card-name {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.client-card-country {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
 .logo-track {
   display: flex;
   align-items: center;
@@ -1203,6 +1328,15 @@ body > * {
 
 .logo-carousel:hover .logo-track {
   animation-play-state: paused;
+}
+
+@keyframes carouselScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes logo-scroll {
@@ -2078,6 +2212,19 @@ body textarea:focus {
 
   #n8n-chat .chat-window {
     max-width: calc(100vw - 32px);
+  }
+
+  .clients-carousel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .clients-carousel-link {
+    white-space: normal;
+  }
+
+  .client-card {
+    min-width: 180px;
   }
 }
 
