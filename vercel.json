@@ -156,6 +156,21 @@
   ],
   "redirects": [
     {
+      "source": "/assets/img/49163.png",
+      "destination": "/assets/img/banner-principal-tech.png",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/index.html",
+      "destination": "/servicios",
+      "permanent": true
+    },
+    {
+      "source": "/agentes/index.html",
+      "destination": "/agentes",
+      "permanent": true
+    },
+    {
       "source": "/power-bi",
       "destination": "/servicios",
       "permanent": true
