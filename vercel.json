@@ -34,10 +34,6 @@
       "source": "/index.md",
       "headers": [
         { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
-        {
-          "key": "Link",
-          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
-        },
         { "key": "Vary", "value": "Accept" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
@@ -76,10 +72,6 @@
       "source": "/servicios.md",
       "headers": [
         { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
-        {
-          "key": "Link",
-          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
-        },
         { "key": "Vary", "value": "Accept" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
@@ -118,10 +110,6 @@
       "source": "/agentes.md",
       "headers": [
         { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
-        {
-          "key": "Link",
-          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
-        },
         { "key": "Vary", "value": "Accept" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
@@ -246,17 +234,6 @@
       "destination": "/servicios.md"
     },
     {
-      "source": "/servicios/index.html",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": "(?:.*)?text/markdown(?:.*)?"
-        }
-      ],
-      "destination": "/servicios.md"
-    },
-    {
       "source": "/agentes",
       "has": [
         {
@@ -277,25 +254,6 @@
         }
       ],
       "destination": "/agentes.md"
-    },
-    {
-      "source": "/agentes/index.html",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": "(?:.*)?text/markdown(?:.*)?"
-        }
-      ],
-      "destination": "/agentes.md"
-    },
-    {
-      "source": "/servicios",
-      "destination": "/servicios.html"
-    },
-    {
-      "source": "/agentes",
-      "destination": "/agentes.html"
     },
     {
       "source": "/index",
