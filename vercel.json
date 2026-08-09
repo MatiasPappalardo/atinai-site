@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" }
       ]
@@ -15,7 +15,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" }
       ]
@@ -25,7 +25,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" }
       ]
@@ -36,7 +36,7 @@
         { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
@@ -47,7 +47,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" }
       ]
@@ -57,7 +57,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" }
       ]
@@ -67,7 +67,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" }
       ]
@@ -78,7 +78,7 @@
         { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
@@ -89,7 +89,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" }
       ]
@@ -99,7 +99,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" }
       ]
@@ -109,7 +109,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" }
       ]
@@ -120,7 +120,7 @@
         { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
         {
           "key": "Link",
-          "value": "<https://atinai.com/servicios>; rel=\"service-doc\", <https://atinai.com/agentes>; rel=\"service-doc\", <https://atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+          "value": "<https://www.atinai.com/servicios>; rel=\"service-doc\", <https://www.atinai.com/agentes>; rel=\"service-doc\", <https://www.atinai.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         },
         { "key": "Vary", "value": "Accept" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }

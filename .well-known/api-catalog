@@ -1,35 +1,35 @@
 {
   "linkset": [
     {
-      "anchor": "https://atinai.com/",
+      "anchor": "https://www.atinai.com/",
       "service-doc": [
         {
-          "href": "https://atinai.com/",
+          "href": "https://www.atinai.com/",
           "type": "text/html",
           "title": "Homepage comercial de Atinai"
         },
         {
-          "href": "https://atinai.com/servicios",
+          "href": "https://www.atinai.com/servicios",
           "type": "text/html",
           "title": "Servicios de IA, automatizacion y Power BI"
         },
         {
-          "href": "https://atinai.com/agentes",
+          "href": "https://www.atinai.com/agentes",
           "type": "text/html",
           "title": "Agentes de IA y automatizacion inteligente"
         },
         {
-          "href": "https://atinai.com/index.md",
+          "href": "https://www.atinai.com/index.md",
           "type": "text/markdown",
           "title": "Resumen publico en Markdown de la homepage"
         },
         {
-          "href": "https://atinai.com/servicios.md",
+          "href": "https://www.atinai.com/servicios.md",
           "type": "text/markdown",
           "title": "Resumen publico en Markdown de servicios"
         },
         {
-          "href": "https://atinai.com/agentes.md",
+          "href": "https://www.atinai.com/agentes.md",
           "type": "text/markdown",
           "title": "Resumen publico en Markdown de agentes"
         }

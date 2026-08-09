@@ -47,11 +47,11 @@ Unificamos front, captación, automatización y BI para que tu equipo vea qué l
 
 ## Enlaces públicos
 
-- [Página principal de Atinai](https://atinai.com/)
-- [Página de agentes de IA de Atinai](https://atinai.com/agentes)
-- [Contacto comercial de Atinai](https://atinai.com/#contacto)
+- [Página principal de Atinai](https://www.atinai.com/)
+- [Página de agentes de IA de Atinai](https://www.atinai.com/agentes)
+- [Contacto comercial de Atinai](https://www.atinai.com/#contacto)
 
 ## Contacto
 
-- [Solicitar diagnóstico a Atinai](https://atinai.com/#contacto)
+- [Solicitar diagnóstico a Atinai](https://www.atinai.com/#contacto)
 - Email público: info@atinai.com

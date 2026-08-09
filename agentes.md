@@ -58,11 +58,11 @@ Aplicamos esta arquitectura a inmobiliarias, clínicas, transportistas, restaura
 
 ## Enlaces públicos
 
-- [Página principal de Atinai](https://atinai.com/)
-- [Página de servicios de Atinai](https://atinai.com/servicios)
-- [Contacto comercial de Atinai](https://atinai.com/#contacto)
+- [Página principal de Atinai](https://www.atinai.com/)
+- [Página de servicios de Atinai](https://www.atinai.com/servicios)
+- [Contacto comercial de Atinai](https://www.atinai.com/#contacto)
 
 ## Contacto
 
-- [Solicitar propuesta a Atinai](https://atinai.com/#contacto)
+- [Solicitar propuesta a Atinai](https://www.atinai.com/#contacto)
 - Email público: info@atinai.com

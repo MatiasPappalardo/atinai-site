@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "site": {
     "name": "Atinai",
-    "url": "https://atinai.com",
-    "contact_url": "https://atinai.com/#contacto"
+    "url": "https://www.atinai.com",
+    "contact_url": "https://www.atinai.com/#contacto"
   },
   "description": "Indice informativo de capacidades publicas de Atinai para discoverability. No expone herramientas ejecutables, callbacks ni APIs.",
   "skills": [
@@ -12,7 +12,7 @@
       "name": "Consultoria en Inteligencia Artificial",
       "type": "informational",
       "summary": "Atinai asesora a empresas en implementacion de soluciones de inteligencia artificial aplicadas a ventas, soporte y operaciones.",
-      "public_url": "https://atinai.com/servicios",
+      "public_url": "https://www.atinai.com/servicios",
       "sha256": "5c5e80f571d524959051cf041789488af1b334d0397ad0342a961b96232e34c6"
     },
     {
@@ -20,7 +20,7 @@
       "name": "Automatizacion de procesos",
       "type": "informational",
       "summary": "Atinai disena automatizaciones para reducir tareas manuales, acelerar respuestas y ordenar operaciones.",
-      "public_url": "https://atinai.com/agentes",
+      "public_url": "https://www.atinai.com/agentes",
       "sha256": "ff05c52556458a20e5ae1c986ee5bff316ebed47d5bcbf7f8114a19d2804b383"
     },
     {
@@ -28,7 +28,7 @@
       "name": "Agentes de IA",
       "type": "informational",
       "summary": "Atinai implementa agentes conversacionales para atencion, ventas, soporte y seguimiento comercial.",
-      "public_url": "https://atinai.com/agentes",
+      "public_url": "https://www.atinai.com/agentes",
       "sha256": "f1aa72ae633a9dffd83f35167d10cdb038195fc1a9f7dc6ff3d65276f62496ba"
     },
     {
@@ -36,7 +36,7 @@
       "name": "Dashboards y Power BI",
       "type": "informational",
       "summary": "Atinai integra dashboards y reporting con foco comercial y operativo como parte de su oferta de servicios.",
-      "public_url": "https://atinai.com/servicios",
+      "public_url": "https://www.atinai.com/servicios",
       "sha256": "cd8b9f07bb7d2e31b180a119675a53444afb1bb61337a597a399b90ce5283c09"
     },
     {
@@ -44,7 +44,7 @@
       "name": "Desarrollo web",
       "type": "informational",
       "summary": "Atinai crea sitios y landings orientados a conversion, performance y captacion de demanda.",
-      "public_url": "https://atinai.com/servicios",
+      "public_url": "https://www.atinai.com/servicios",
       "sha256": "c1b1fc465e031df6d35a136f6c0c85c094b6330d233601d4d27e3866d96d6284"
     }
   ]
